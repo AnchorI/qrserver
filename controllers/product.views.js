@@ -8,7 +8,7 @@ const path = require('path');
 
             if (req.url === '/') {
                 fs.readFile(
-                    path.join(__dirname, '../views', 'index.html'),
+                    path.join(__dirname, '../client/public', 'index.html'),
                     'utf-8',
                     (err, content) => {
                         if (err) {
