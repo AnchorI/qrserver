@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f38a21e7-42de-438a-9542-7fccb865627b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1kR1v0BXqRxBm2vbjeOXuMDSu0w" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.7" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/controllers" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/routes" />
+      <recent name="$PROJECT_DIR$/models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.node.js">
+    <configuration name="node.js" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$/../qrserver">
+      <method v="2" />
+    </configuration>
+    <configuration name="os_ref.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/refs/os_ref.js" working-dir="$PROJECT_DIR$/refs">
+      <method v="2" />
+    </configuration>
+    <configuration name="path_ref.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/refs/path_ref.js" working-dir="$PROJECT_DIR$/refs">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.node.js" />
+      <item itemvalue="Node.js.os_ref.js" />
+      <item itemvalue="Node.js.path_ref.js" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.path_ref.js" />
+        <item itemvalue="Node.js.os_ref.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f38a21e7-42de-438a-9542-7fccb865627b" name="Default Changelist" comment="" />
+      <created>1605648816947</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605648816947</updated>
+      <workItem from="1605648817977" duration="3572000" />
+      <workItem from="1605654568715" duration="20119000" />
+      <workItem from="1605885390822" duration="2733000" />
+      <workItem from="1605905875055" duration="3698000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="608" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605649699030">
+      <screen x="0" y="23" width="1680" height="969" />
+    </state>
+    <state x="608" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.969@0.23.1680.969" timestamp="1605649699030" />
+    <state x="118" y="316" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605705308658">
+      <screen x="0" y="23" width="1680" height="969" />
+    </state>
+    <state x="118" y="316" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.969@0.23.1680.969" timestamp="1605705308658" />
+    <state x="564" y="261" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605906212211">
+      <screen x="0" y="23" width="1680" height="969" />
+    </state>
+    <state x="564" y="261" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.969@0.23.1680.969" timestamp="1605906212211" />
+    <state width="1025" height="248" key="GridCell.Tab.0.bottom" timestamp="1605651747627">
+      <screen x="0" y="23" width="1680" height="969" />
+    </state>
+    <state width="1025" height="248" key="GridCell.Tab.0.bottom/0.23.1680.969@0.23.1680.969" timestamp="1605651747627" />
+    <state width="1025" height="248" key="GridCell.Tab.0.center" timestamp="1605651747626">
+      <screen x="0" y="23" width="1680" height="969" />
+    </state>
+    <state width="1025" height="248" key="GridCell.Tab.0.center/0.23.1680.969@0.23.1680.969" timestamp="1605651747626" />
+    <state width="1025" height="248" key="GridCell.Tab.0.left" timestamp="1605651747626">
+      <screen x="0" y="23" width="1680" height="969" />
+    </state>
+    <state width="1025" height="248" key="GridCell.Tab.0.left/0.23.1680.969@0.23.1680.969" timestamp="1605651747626" />
+    <state width="1025" height="248" key="GridCell.Tab.0.right" timestamp="1605651747627">
+      <screen x="0" y="23" width="1680" height="969" />
+    </state>
+    <state width="1025" height="248" key="GridCell.Tab.0.right/0.23.1680.969@0.23.1680.969" timestamp="1605651747627" />
+    <state x="841" y="111" width="604" height="822" key="find.popup" timestamp="1605651717409">
+      <screen x="0" y="23" width="1680" height="969" />
+    </state>
+    <state x="841" y="111" width="604" height="822" key="find.popup/0.23.1680.969@0.23.1680.969" timestamp="1605651717409" />
+  </component>
+</project>
