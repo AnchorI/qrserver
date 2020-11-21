@@ -1,0 +1,182 @@
+Index: app.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const express = require('express');\nconst bodyParser = require('body-parser');\n// initialize our express app\nconst product = require('./routes/product.route'); // Imports routes for the products\nconst views = require('./views/views');\nconst app = express();\n// Set up mongoose connection\nconst mongoose = require('mongoose');\n\n\nlet dev_db_url = 'mongodb+srv://anchori:A1mBf0W3XL21nlLJ@sportcomdb.wsq9v.mongodb.net/sportcomdb?retryWrites=true&w=majority';\nlet mongoDB = process.env.MONGODB_URI || dev_db_url;\nmongoose.connect(mongoDB,{useNewUrlParser: true, useUnifiedTopology: true});\nmongoose.Promise = global.Promise;\n\nlet db = mongoose.connection;\ndb.on('error', console.error.bind(console, 'MongoDB connection error:'));\n\n// <-------app.use----->\napp.use(bodyParser.json());\napp.use(bodyParser.urlencoded({extended: false}));\napp.use('/products', product);\napp.use('/',views)\n\n\n//<---------Port-------->\n\nlet port = 1234;\n\napp.listen(port, () => {\n    console.log('Server is up and running on port number ' + port);\n});
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app.js	(revision 55b2657f2eb78292535d1a8a6b7c6016e5ffe1a3)
++++ app.js	(date 1605917819931)
+@@ -1,28 +1,79 @@
+ const express = require('express');
+ const bodyParser = require('body-parser');
+-// initialize our express app
++const cors = require("cors");
+ const product = require('./routes/product.route'); // Imports routes for the products
+ const views = require('./views/views');
+ const app = express();
++const db = require("./models");
++const Role = db.role;
+ // Set up mongoose connection
+ const mongoose = require('mongoose');
+ 
++//<------Cors-------->
++
++let corsOptions = {
++    origgin: "http://localhost:8081"
++};
+ 
++//<------Cors-------->
++
++
++//<------MONGODB_CONNECT-------->
+ let dev_db_url = 'mongodb+srv://anchori:A1mBf0W3XL21nlLJ@sportcomdb.wsq9v.mongodb.net/sportcomdb?retryWrites=true&w=majority';
+ let mongoDB = process.env.MONGODB_URI || dev_db_url;
+ mongoose.connect(mongoDB,{useNewUrlParser: true, useUnifiedTopology: true});
+ mongoose.Promise = global.Promise;
+ 
+-let db = mongoose.connection;
+-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
++let dbb = mongoose.connection;
++dbb.on('error', console.error.bind(console, 'MongoDB connection error:'));
++//<------MONGODB_CONNECT-------->
+ 
+ // <-------app.use----->
+ app.use(bodyParser.json());
+-app.use(bodyParser.urlencoded({extended: false}));
++app.use(bodyParser.urlencoded({extended: true}));
+ app.use('/products', product);
+ app.use('/',views)
+ 
++//<--------AddRolesToDB------->
++function initial() {
++    Role.estimatedDocumentCount((err, count) => {
++        if (!err && count === 0) {
++            new Role({
++                name: "user"
++            }).save(err => {
++                if (err) {
++                    console.log("error", err);
++                }
++
++                console.log("added 'user' to roles collection");
++            });
++
++            new Role({
++                name: "moderator"
++            }).save(err => {
++                if (err) {
++                    console.log("error", err);
++                }
++
++                console.log("added 'moderator' to roles collection");
++            });
+ 
++            new Role({
++                name: "admin"
++            }).save(err => {
++                if (err) {
++                    console.log("error", err);
++                }
++
++                console.log("added 'admin' to roles collection");
++            });
++        }
++    });
++}
++//<--------AddRolesToDB------->
++// routes
++require('./routes/auth.routes')(app);
++require('./routes/user.routes')(app);
+ //<---------Port-------->
+ 
+ let port = 1234;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"f38a21e7-42de-438a-9542-7fccb865627b\" name=\"Default Changelist\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExportToHTMLSettings\">\n    <option name=\"OUTPUT_DIRECTORY\" value=\"$PROJECT_DIR$/exportToHTML\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"HTML File\" />\n        <option value=\"JavaScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"1kR1v0BXqRxBm2vbjeOXuMDSu0w\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"DefaultHtmlFileTemplate\" value=\"HTML File\" />\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"javascript.nodejs.core.library.configured.version\" value=\"14.15.1\" />\n    <property name=\"javascript.nodejs.core.library.typings.version\" value=\"14.14.7\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\n    <property name=\"nodejs_interpreter_path\" value=\"node\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/controllers\" />\n      <recent name=\"$PROJECT_DIR$\" />\n      <recent name=\"$PROJECT_DIR$/views\" />\n      <recent name=\"$PROJECT_DIR$/routes\" />\n      <recent name=\"$PROJECT_DIR$/models\" />\n    </key>\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Node.js.node.js\">\n    <configuration name=\"node.js\" type=\"NodeJSConfigurationType\" working-dir=\"$PROJECT_DIR$/../qrserver\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"os_ref.js\" type=\"NodeJSConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\" path-to-js-file=\"$PROJECT_DIR$/refs/os_ref.js\" working-dir=\"$PROJECT_DIR$/refs\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"path_ref.js\" type=\"NodeJSConfigurationType\" temporary=\"true\" nameIsGenerated=\"true\" path-to-js-file=\"$PROJECT_DIR$/refs/path_ref.js\" working-dir=\"$PROJECT_DIR$/refs\">\n      <method v=\"2\" />\n    </configuration>\n    <list>\n      <item itemvalue=\"Node.js.node.js\" />\n      <item itemvalue=\"Node.js.os_ref.js\" />\n      <item itemvalue=\"Node.js.path_ref.js\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Node.js.path_ref.js\" />\n        <item itemvalue=\"Node.js.os_ref.js\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"f38a21e7-42de-438a-9542-7fccb865627b\" name=\"Default Changelist\" comment=\"\" />\n      <created>1605648816947</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1605648816947</updated>\n      <workItem from=\"1605648817977\" duration=\"3572000\" />\n      <workItem from=\"1605654568715\" duration=\"20119000\" />\n      <workItem from=\"1605885390822\" duration=\"2733000\" />\n      <workItem from=\"1605905875055\" duration=\"3698000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"608\" y=\"184\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog\" timestamp=\"1605649699030\">\n      <screen x=\"0\" y=\"23\" width=\"1680\" height=\"969\" />\n    </state>\n    <state x=\"608\" y=\"184\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.969@0.23.1680.969\" timestamp=\"1605649699030\" />\n    <state x=\"118\" y=\"316\" key=\"#com.intellij.fileTypes.FileTypeChooser\" timestamp=\"1605705308658\">\n      <screen x=\"0\" y=\"23\" width=\"1680\" height=\"969\" />\n    </state>\n    <state x=\"118\" y=\"316\" key=\"#com.intellij.fileTypes.FileTypeChooser/0.23.1680.969@0.23.1680.969\" timestamp=\"1605705308658\" />\n    <state x=\"564\" y=\"261\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1605906212211\">\n      <screen x=\"0\" y=\"23\" width=\"1680\" height=\"969\" />\n    </state>\n    <state x=\"564\" y=\"261\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.969@0.23.1680.969\" timestamp=\"1605906212211\" />\n    <state width=\"1025\" height=\"248\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1605651747627\">\n      <screen x=\"0\" y=\"23\" width=\"1680\" height=\"969\" />\n    </state>\n    <state width=\"1025\" height=\"248\" key=\"GridCell.Tab.0.bottom/0.23.1680.969@0.23.1680.969\" timestamp=\"1605651747627\" />\n    <state width=\"1025\" height=\"248\" key=\"GridCell.Tab.0.center\" timestamp=\"1605651747626\">\n      <screen x=\"0\" y=\"23\" width=\"1680\" height=\"969\" />\n    </state>\n    <state width=\"1025\" height=\"248\" key=\"GridCell.Tab.0.center/0.23.1680.969@0.23.1680.969\" timestamp=\"1605651747626\" />\n    <state width=\"1025\" height=\"248\" key=\"GridCell.Tab.0.left\" timestamp=\"1605651747626\">\n      <screen x=\"0\" y=\"23\" width=\"1680\" height=\"969\" />\n    </state>\n    <state width=\"1025\" height=\"248\" key=\"GridCell.Tab.0.left/0.23.1680.969@0.23.1680.969\" timestamp=\"1605651747626\" />\n    <state width=\"1025\" height=\"248\" key=\"GridCell.Tab.0.right\" timestamp=\"1605651747627\">\n      <screen x=\"0\" y=\"23\" width=\"1680\" height=\"969\" />\n    </state>\n    <state width=\"1025\" height=\"248\" key=\"GridCell.Tab.0.right/0.23.1680.969@0.23.1680.969\" timestamp=\"1605651747627\" />\n    <state x=\"841\" y=\"111\" width=\"604\" height=\"822\" key=\"find.popup\" timestamp=\"1605651717409\">\n      <screen x=\"0\" y=\"23\" width=\"1680\" height=\"969\" />\n    </state>\n    <state x=\"841\" y=\"111\" width=\"604\" height=\"822\" key=\"find.popup/0.23.1680.969@0.23.1680.969\" timestamp=\"1605651717409\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 55b2657f2eb78292535d1a8a6b7c6016e5ffe1a3)
++++ .idea/workspace.xml	(date 1605917759383)
+@@ -1,5 +1,23 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="BranchesTreeState">
++    <expand>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </expand>
++    <select />
++  </component>
+   <component name="ChangeListManager">
+     <list default="true" id="f38a21e7-42de-438a-9542-7fccb865627b" name="Default Changelist" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+@@ -17,8 +35,15 @@
+         <option value="JavaScript File" />
+       </list>
+     </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="ProjectId" id="1kR1v0BXqRxBm2vbjeOXuMDSu0w" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -53,7 +78,7 @@
+     </key>
+   </component>
+   <component name="RunManager" selected="Node.js.node.js">
+-    <configuration name="node.js" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$/../qrserver">
++    <configuration name="node.js" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$">
+       <method v="2" />
+     </configuration>
+     <configuration name="os_ref.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/refs/os_ref.js" working-dir="$PROJECT_DIR$/refs">
+@@ -92,6 +117,18 @@
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
+   <component name="WindowStateProjectService">
+     <state x="608" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605649699030">
+       <screen x="0" y="23" width="1680" height="969" />
+@@ -121,6 +158,11 @@
+       <screen x="0" y="23" width="1680" height="969" />
+     </state>
+     <state width="1025" height="248" key="GridCell.Tab.0.right/0.23.1680.969@0.23.1680.969" timestamp="1605651747627" />
++    <state x="66" y="268" key="Vcs.Push.Dialog.v2" timestamp="1605917691376">
++      <screen x="0" y="23" width="1680" height="969" />
++    </state>
++    <state x="66" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1605917395226" />
++    <state x="66" y="268" key="Vcs.Push.Dialog.v2/0.23.1680.969@0.23.1680.969" timestamp="1605917691376" />
+     <state x="841" y="111" width="604" height="822" key="find.popup" timestamp="1605651717409">
+       <screen x="0" y="23" width="1680" height="969" />
+     </state>
