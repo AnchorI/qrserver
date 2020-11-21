@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f38a21e7-42de-438a-9542-7fccb865627b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_20,_3_14_AM_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_20,_3_18_AM_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_20__3_14_AM__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_20__3_18_AM__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/auth.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/authJwt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/role.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/user.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/auth.routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/user.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/product.views.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/product.views.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +52,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1kR1v0BXqRxBm2vbjeOXuMDSu0w" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,6 +77,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/controllers" />
       <recent name="$PROJECT_DIR$" />
@@ -62,21 +87,6 @@
       <recent name="$PROJECT_DIR$/routes" />
       <recent name="$PROJECT_DIR$/models" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Node.js.node.js">
     <configuration name="node.js" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$">
@@ -100,7 +110,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -128,13 +138,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
     <state x="608" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605649699030">
@@ -165,6 +177,14 @@
       <screen x="0" y="23" width="1680" height="969" />
     </state>
     <state width="1025" height="248" key="GridCell.Tab.0.right/0.23.1680.969@0.23.1680.969" timestamp="1605651747627" />
+    <state x="602" y="234" key="RollbackChangesDialog" timestamp="1605918074260">
+      <screen x="0" y="23" width="1680" height="969" />
+    </state>
+    <state x="602" y="234" key="RollbackChangesDialog/0.23.1680.969@0.23.1680.969" timestamp="1605918074260" />
+    <state x="547" y="247" key="Vcs.Push.Dialog.v2" timestamp="1605918854425">
+      <screen x="0" y="23" width="1680" height="969" />
+    </state>
+    <state x="547" y="247" key="Vcs.Push.Dialog.v2/0.23.1680.969@0.23.1680.969" timestamp="1605918854425" />
     <state x="841" y="111" width="604" height="822" key="find.popup" timestamp="1605651717409">
       <screen x="0" y="23" width="1680" height="969" />
     </state>
