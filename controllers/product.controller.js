@@ -9,6 +9,7 @@ const Product = require('../models/product.model');
         Product.find(req.params.id, function (err, product) {
             if (err) return console.log(err);
             console.log(product);
+            res.set('Access-Control-Allow-Origin', '*')
             res.send(product);
         })
     };
@@ -34,7 +35,7 @@ const Product = require('../models/product.model');
         Product.findById(req.params.id, function (err, product) {
             if (err) return console.log(err);
             console.log(product);
-
+            res.set('Access-Control-Allow-Origin', '*');
             res.send(product);
         })
     };

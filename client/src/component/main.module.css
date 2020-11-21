@@ -1,0 +1,56 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    color: white;
+    box-sizing: border-box;
+}
+a, :after{
+    text-decoration: none;
+    color: white;
+
+}
+form{
+    margin: 0;
+    padding: 0;
+}
+.Input{
+    width: 25%;
+    text-align: center;
+
+}
+.WorkSpace{
+    height: 1080px;
+    display: grid;
+    grid-template-columns: 1fr 8fr ;
+    grid-template-areas:
+            "H H H H"
+            "S W W W"
+            "S W W W"
+            "F F F F";
+    grid-template-rows: 1fr 10fr 1fr;
+
+}
+footer{
+    grid-area: F;
+    background: #282c34;
+}
+nav{
+    background: #282c34;
+    grid-area: S;
+
+    text-align: center;
+    color: white;
+}
+.Space{
+    grid-area: W;
+    width: 100%;
+    margin: 10px;
+
+}
+header{
+    grid-area: H;
+    width: 100%;
+    background: #282c34;
+    text-align: center;
+}
