@@ -12,4 +12,4 @@ let ProductSchema = new Schema({
 
 
 // Export the model
-module.exports = mongoose.model('sportcomdbs', ProductSchema);
+module.exports = mongoose.model('sportcomdb', ProductSchema);

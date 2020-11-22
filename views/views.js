@@ -6,5 +6,3 @@ router.get('/', views_controller.views_html);
 
 
 module.exports = router;
-
-

@@ -3,9 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 const product = require('./routes/product.route'); // Imports routes for the products
 const views = require('./views/views');
-const api = require('./routes/user.routes');
-const apii = require('./routes/auth.routes');
-
 const app = express();
 const db = require("./models");
 const Role = db.role;
@@ -28,16 +25,14 @@ mongoose.connect(mongoDB,{useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 
 let dbb = mongoose.connection;
-dbb.on('error', console.error.bind(console, 'MongoDB connection error:'), initial());
+dbb.on('error', console.error.bind(console, 'MongoDB connection error:'));
 //<------MONGODB_CONNECT-------->
 
 // <-------app.use----->
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/products', product);
-app.use('/',views);
-app.use('/api',api);
-app.use('/api',apii);
+app.use('/',views)
 
 //<--------AddRolesToDB------->
 function initial() {
@@ -77,41 +72,7 @@ function initial() {
 }
 //<--------AddRolesToDB------->
 // routes
-function initial() {
-    Role.estimatedDocumentCount((err, count) => {
-        if (!err && count === 0) {
-            new Role({
-                name: "user"
-            }).save(err => {
-                if (err) {
-                    console.log("error", err);
-                }
-
-                console.log("added 'user' to roles collection");
-            });
-
-            new Role({
-                name: "moderator"
-            }).save(err => {
-                if (err) {
-                    console.log("error", err);
-                }
-
-                console.log("added 'moderator' to roles collection");
-            });
-
-            new Role({
-                name: "admin"
-            }).save(err => {
-                if (err) {
-                    console.log("error", err);
-                }
-
-                console.log("added 'admin' to roles collection");
-            });
-        }
-    });
-}
+require('./routes/auth.routes')(app);
 //<---------Port-------->
 
 let port = 1234;
@@ -119,5 +80,3 @@ let port = 1234;
 app.listen(port, () => {
     console.log('Server is up and running on port number ' + port);
 });
-
-module.exports = app;
