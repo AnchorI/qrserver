@@ -18,6 +18,7 @@ const Product = require('../models/product.model');
         let product = new Product(
             {
                 name: req.body.name,
+                price: req.body.price,
                 pd: req.body.pd,
                 check: req.body.check
             }

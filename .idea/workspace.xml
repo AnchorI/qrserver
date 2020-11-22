@@ -5,25 +5,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f38a21e7-42de-438a-9542-7fccb865627b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_20,_3_14_AM_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_20,_3_18_AM_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_20__3_14_AM__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_21_20__3_18_AM__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/auth.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/auth.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/authJwt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/role.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/user.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/auth.routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/user.routes.js" afterDir="false" />
+    <list default="true" id="f38a21e7-42de-438a-9542-7fccb865627b" name="Default Changelist" comment="Add Regg + User,admin,moderator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +93,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -127,11 +110,21 @@
       <workItem from="1605905875055" duration="3698000" />
       <workItem from="1605914383319" duration="179000" />
       <workItem from="1605914579176" duration="540000" />
+      <workItem from="1605923302319" duration="233000" />
+      <workItem from="1605978255274" duration="757000" />
     </task>
+    <task id="LOCAL-00001" summary="Add Regg + User,admin,moderator">
+      <created>1605923401694</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605923401694</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -146,7 +139,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Add Regg + User,admin,moderator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Regg + User,admin,moderator" />
   </component>
   <component name="WindowStateProjectService">
     <state x="608" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605649699030">
@@ -181,10 +175,10 @@
       <screen x="0" y="23" width="1680" height="969" />
     </state>
     <state x="602" y="234" key="RollbackChangesDialog/0.23.1680.969@0.23.1680.969" timestamp="1605918074260" />
-    <state x="547" y="247" key="Vcs.Push.Dialog.v2" timestamp="1605918854425">
+    <state x="547" y="247" key="Vcs.Push.Dialog.v2" timestamp="1605923320796">
       <screen x="0" y="23" width="1680" height="969" />
     </state>
-    <state x="547" y="247" key="Vcs.Push.Dialog.v2/0.23.1680.969@0.23.1680.969" timestamp="1605918854425" />
+    <state x="547" y="247" key="Vcs.Push.Dialog.v2/0.23.1680.969@0.23.1680.969" timestamp="1605923320795" />
     <state x="841" y="111" width="604" height="822" key="find.popup" timestamp="1605651717409">
       <screen x="0" y="23" width="1680" height="969" />
     </state>
