@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import {Switch, Route, Link, Redirect} from "react-router-dom";
 
 
 
@@ -37,7 +37,7 @@ const WebPage = () => {
         <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
                 <Link to={"/"} className="navbar-brand">
-                    bezKoder
+                    Taburetka
                 </Link>
                 <div className="navbar-nav mr-auto">
                     <li className="nav-item">
@@ -92,23 +92,18 @@ const WebPage = () => {
                             </Link>
                         </li>
 
-                        <li className="nav-item">
-                            <Link to={"/register"} className="nav-link">
-                                Sign Up
-                            </Link>
-                        </li>
                     </div>
                 )}
             </nav>
 
             <div className="container mt-3">
                 <Switch>
-                    <Route exact path={["/", "/home"]} component={Home} />
-                    <Route exact path="/login" component={Login} />
-
+                    <Route  path="/home" component={Home} />
+                    <Route  path="/login" component={Login} />
+                    <Redirect from='/' to='/home'/>
                     <Route exact path="/profile" component={Profile} />
                     <Route path="/user" component={BoardUser} />
-
+                   /* ["/", "/home"] */
                 </Switch>
             </div>
         </div>

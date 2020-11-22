@@ -1,11 +1,13 @@
 import React from 'react';
-import s from './main.module.css'
-import Form from "./Form";
 
-const ClientList = () => {
+
+
+const ClientList = (props) => {
     return(
-        <div className={s.ClientList}>
-            <Form/>
+        <div className="client main">
+            <h2>Номер вашего билета: {props.id}</h2>
+            <h2> Название мероприятия: None</h2>
+            <h2> Имя владельца билета {props.name}</h2>
         </div>
     )
 }

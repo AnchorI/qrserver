@@ -1,17 +1,17 @@
-import React, {useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
-import AuthService from '../service/auth.service';
+import AuthService from "../service/auth.service";
 
 const required = (value) => {
-    if(!value){
-        return(
+    if (!value) {
+        return (
             <div className="alert alert-danger" role="alert">
-                This field is required!
-            </div>
-        );
+            This field is required!
+        </div>
+    );
     }
 };
 
@@ -24,15 +24,15 @@ const Login = (props) => {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
 
-    const inChangeUsername = (e) => {
+    const onChangeUsername = (e) => {
         const username = e.target.value;
         setUsername(username);
     };
 
-    const onChangePassword = (e) =>{
+    const onChangePassword = (e) => {
         const password = e.target.value;
         setPassword(password);
-    }
+    };
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -42,36 +42,33 @@ const Login = (props) => {
 
         form.current.validateAll();
 
-        if(checkBtn.current.context._errors.length === 0){
-            AuthService.login(username,password).then(
+        if (checkBtn.current.context._errors.length === 0) {
+            AuthService.login(username, password).then(
                 () => {
-                props.history.push("/profile");
-                window.location.reload();
-            },
+                    props.history.push("/profile");
+                    window.location.reload();
+                },
                 (error) => {
                     const resMessage =
                         (error.response &&
-                        error.response.data &&
-                        error.response.data.message) ||
+                            error.response.data &&
+                            error.response.data.message) ||
                         error.message ||
                         error.toString();
 
-                        setLoading(false);
-                        setMessage(resMessage);
+                    setLoading(false);
+                    setMessage(resMessage);
                 }
-                );
+            );
         } else {
             setLoading(false);
         }
     };
-    return(
+
+    return (
         <div className="col-md-12">
         <div className="card card-container">
-        <img
-    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-    alt="profile-img"
-    className="profile-img-card"
-        />
+
 
         <Form onSubmit={handleLogin} ref={form}>
         <div className="form-group">
@@ -119,8 +116,6 @@ const Login = (props) => {
     </div>
     </div>
 );
-
-
 };
 
-export default  Login;
+export default Login;
