@@ -1,6 +1,6 @@
 const MongoClient = require("mongodb").MongoClient;
 
-const url = "mongodb+srv://qrsc:iIoFpuISNRxgXsno@qrscdb.nj8kp.mongodb.net/qrsc?retryWrites=true&w=majority";
+const url = "*";
 const mongoClient = new MongoClient(url, { useNewUrlParser: true });
 
 let users = [{name: "Bob", age: 34} , {name: "Alice", age: 21}, {name: "Tom", age: 45}];
